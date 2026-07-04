@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily SteamOS backup to Cloudflare R2
+
+[Timer]
+OnCalendar=daily
+# If the Deck was off/asleep at the scheduled time, run at next opportunity.
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target

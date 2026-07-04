@@ -1,0 +1,13 @@
+# Eden (Switch emu) SAVEDATA ONLY: game saves (nand/user/save), user profiles
+# and system saves (nand/system), plus tiny config-ish dirs. Explicitly
+# excludes installed game updates/DLC (nand/user/Contents, ~9G), ROM-adjacent
+# content in sdmc, dumps, and screenshots — all reinstallable/regenerable.
+NAME="eden-saves"
+SRC="/run/media/mmcblk0p1/Emulation/storage/eden"
+EXTRA_ARGS=(
+  --exclude 'nand/user/Contents/**'
+  --exclude 'sdmc/Nintendo/Contents/**'
+  --exclude 'sdmc/atmosphere/**'
+  --exclude 'dump/**'
+  --exclude 'screenshots/**'
+)

@@ -1,0 +1,9 @@
+[Unit]
+Description=Back up SteamOS dirs to Cloudflare R2
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/steamos-backups/backup.sh
+Nice=10
+IOSchedulingClass=idle
